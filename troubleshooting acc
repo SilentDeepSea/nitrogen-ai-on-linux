@@ -1,0 +1,24 @@
+Color Inversion: Ensure game_env.py uses the BGRX to RGB conversion, otherwise the AI will be "colorblind."
+
+    Window Focus: The SuperTux window must be the active window for virtual inputs to register.
+
+    Aspect Ratio: Running the game at 1280x720 (16:9) provides the best results for the Vision Transformer model.
+
+
+---
+
+## 2. GitHub File Structure Improvements
+Looking at your file list in the screenshot:
+* **Add a `.gitignore`**: Create a file named `.gitignore` and add `venv/` to it. You don't want to upload your 500MB virtual environment to GitHub.
+* **Add `requirements.txt`**: Create a file named `requirements.txt` so you can reinstall everything with one command later:
+  ```text
+  mss
+  vgamepad
+  pywinctl
+  pillow
+  psutil
+  gymnasium
+
+3. The Final Patch
+
+Make sure the game_env.py you uploaded contains the pause() and unpause() placeholders we added earlier. Without those, the play.py script will crash immediately when it tries to start the session.
