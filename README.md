@@ -1,5 +1,20 @@
 
-🐧 NitroGen Linux Setup & Run Guide
+# 🐧 NitroGen-AI Linux Port
+
+This repository contains the necessary patches and instructions to run the NitroGen AI model on **Manjaro/Arch Linux (KDE Plasma)**. This port replaces Windows-specific dependencies (DXCam, Win32API) with Linux-native alternatives.
+
+## 🛠 Prerequisites
+
+### Session Requirement
+NitroGen's screen capture requires an **X11 Session**. Wayland is currently unsupported due to security restrictions on screen scraping.
+1. Log out of your current session.
+2. Select **Plasma (X11)** from the login screen menu.
+3. Verify by running: `echo $XDG_SESSION_TYPE` (should return `x11`).
+
+### System Dependencies
+Install the required X11 tools and virtual controller support:
+```bash
+sudo pacman -S --needed xorg-xset xorg-xrandr plasma-x11-session
 
 This guide compiles the steps required to run the NitroGen AI model on Manjaro/Arch Linux using KDE Plasma.
 1. Prerequisites
